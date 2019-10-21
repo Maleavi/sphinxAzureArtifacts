@@ -1,8 +1,10 @@
-﻿﻿param($netadapt= (Get-NetAdapter).Name,
-$ip="192.168.0.1",
-$hostname="DC01"
-$prefix=24,
-$dnsip="192.168.0.1")
+[CmdletBinding()]
+param (
+[String] $ip,
+[int32] $prefix,
+[String] $hostname,
+[String] $dnsip
+)
 
 Rename-Computer -NewName $hostname
 New-NetIPAddress -InterfaceAlias $netadapt -IPAddress $ip -PrefixLength $prefix
