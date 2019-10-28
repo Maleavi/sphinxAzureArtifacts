@@ -1,4 +1,8 @@
-﻿﻿param([string]$netadapt= (Get-NetAdapter).Name, 
-    [string]$dnsip="192.168.0.1")
+[CmdletBinding()]
+param(
+    [string]$dnsip
+)
+
+$netadapt = (Get-NetAdapter).Name
 
 Set-DnsClientServerAddress -InterfaceAlias $netadapt -ServerAddresses $dnsip
