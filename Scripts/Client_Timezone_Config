@@ -1,0 +1,6 @@
+[CmdletBinding()]
+param (
+)
+Set-TimeZone -Id "W. Europe Standard Time"
+#Enable-PSRemoting -Force
+#Restart-Computer
